@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -7,6 +7,29 @@ int main()
     e(m) = (m + k)(%26);
     
     d(c) = (c - k)(%26);
+
+    return 0;
+}
+*/
+#include <stdio.h>
+
+int main()
+{
+int i, x;
+    //int k = 3; 
+    char str[26];
+    
+    printf("\nPlease enter a string:\t");
+    gets(str);
+    
+    for(i = 0; (i < 100 && str[i] != '\0'); i++)
+        str[i] = str[i] + 3; 
+        
+        printf("\nEncrypted string: %s\n", str);
+    
+    //e(m) = (m + k)(%26);
+    
+    //d(c) = (c - k)(%26);
 
     return 0;
 }
