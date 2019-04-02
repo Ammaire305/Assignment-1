@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    int k = 3; //haven't put actual thing to be encrypted and decryted in yet. have it waiting and ready for when i figure out what the hell im doing
+    
+    e(m) = (m + k)(%26);
+    
+    d(c) = (c - k)(%26);
+
+    return 0;
+}
