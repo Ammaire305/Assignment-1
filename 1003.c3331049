@@ -32,11 +32,19 @@ int main()
       printf("\nDecrypted string: %s\n", str);
       break;
    case 3:
-   
-   case 4:
-   
-  
-   default:
+   if ((rotated >= 'a' && rotated < 'n') || (rotated >= 'A' && rotated < 'N'))
+    {
+      rotated = rotated + 13;
+      printf("\nEncrypted string: %s\n", str);
+    } //doesnt work yet   
+    case 4:
+   if ((rotated >= 'n' && rotated <= 'z')
+      || (rotated >= 'N' && rotated <= 'Z'))
+    {
+      rotated = rotated - 13;
+      printf("\nDecrypted string: %s\n", str);
+    } //doesnt work yet 
+    default:
       printf("\nError\n");
    }
    return 0;
