@@ -42,7 +42,9 @@ int main()
         str[i] = str[i] - 13; //the key for encryption is 13 that is subtracted to ASCII value (13 because of the cypher ROT13)
 
       printf("\nDecrypted string: %s\n", str);
-      break;    default:
+      break;    
+      
+      default:
       printf("\nError\n");
    }
    return 0;
