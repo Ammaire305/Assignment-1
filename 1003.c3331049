@@ -11,8 +11,8 @@ int main()
    printf("\nPlease choose following options:\n");
    printf("1 = Encrypt the string.(Rotation)\n");
    printf("2 = Decrypt the string.(Rotation)\n");
-   printf ("3 = Encrypt the string.(Substution)\n");
-   printf ("4 = Decrypt the string.(Substution)\n");   
+   printf ("3 = Encrypt the string.(Substitution)\n");
+   printf ("4 = Decrypt the string.(Substitution)\n");   
    scanf("%d", &x);
 
    //using switch case statements
@@ -20,14 +20,14 @@ int main()
    {
    case 1:
       for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] + 19; //the key for encryption is 3 that is added to ASCII value
+        str[i] = str[i] + 19; //the key for encryption is 19 that is added to ASCII value
 
       printf("\nEncrypted string: %s\n", str);
       break;
 
    case 2:
       for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] - 19; //the key for encryption is 3 that is subtracted to ASCII value
+        str[i] = str[i] - 19; //the key for encryption is 19 that is subtracted to ASCII value
 
       printf("\nDecrypted string: %s\n", str);
       break;
