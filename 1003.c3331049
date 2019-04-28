@@ -25,19 +25,39 @@ int main()
    switch(x)
    {
    case 1:
-      for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] + 3; //the key for encryption is 3 that is added to ASCII value
-
-      printf("\nEncrypted string: %s\n", str);
-      break;
-     
-
+   printf("\nEncrypted string: ");
+        for(i = 0; i < 26; i++) {
+            char letter = str[i];
+            if(letter ==  '\n' || letter == '\0') {
+                break; //done here
+            }
+            if((letter >= 'a' && letter < 'z' - 7) || (letter >= 'A' && letter < 'Z' - 7)) {
+            printf("%c", str[i] + 7); //the key for encryption is 7 that is added to ASCII value ROT7
+            }
+            else if((letter >= 'z' - 7 && letter <= 'z') || (letter >= 'Z' - 7 && letter <= 'Z')) {
+                printf("%c", str[i] + 7 - 26);
+            }
+            else{
+                printf("%c", letter);
+            }
+        } break;
    case 2:
-      for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] - 3; //the key for decryption is 3 that is subtracted to ASCII value
-
-      printf("\nDecrypted string: %s\n", str);
-      break;
+    printf("\nDecrypted string: ");
+        for(i = 0; i < 26; i++) {
+            char letter = str[i];
+            if(letter ==  '\n' || letter == '\0') {
+                break; //done here
+            }
+            if((letter >= 'a' && letter < 'z' - (26 - 7)) || (letter >= 'A' && letter < 'Z' - (26 - 7))) { // using (26 - 7) as ROT7 was used for encryption, ROT26-7 is the opposite and will decrypt.
+            printf("%c", str[i] + (26 - 7)); 
+            }
+            else if((letter >= 'z' - (26 - 7) && letter <= 'z') || (letter >= 'Z' - (26 - 7) && letter <= 'Z')) {
+                printf("%c", str[i] + (26 - 7) - 26);
+            }
+            else{
+                printf("%c", letter);
+            }
+        } break; 
    case 3:
    printf("\nEncrypted string: ");
       for(i = 0; i < 26; i++) {
