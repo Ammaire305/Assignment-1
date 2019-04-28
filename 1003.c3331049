@@ -17,8 +17,8 @@ int main()
    printf("\nPlease choose following options:\n");
    printf("1 = Encrypt the string.(Rotation)\n");
    printf("2 = Decrypt the string.(Rotation)\n");
-   printf ("3 = Encrypt the string.(Substitution)\n");
-   printf ("4 = Decrypt the string.(Substitution)\n");   
+   printf("3 = Encrypt the string.(Substitution)\n");
+   printf("4 = Decrypt the string.(Substitution)\n");   
    scanf("%d", &x);
 
    //using switch case statements
