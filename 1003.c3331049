@@ -78,4 +78,4 @@ int main()
       printf("\nError\n");
    }
    return 0;
-} //This can only be run in onlineGDB as I couldn't get anything to run in che due to lack of knowledge
+} //This can only be run in onlineGDB as I couldn't get anything to run in che due to lack of knowledge and time to learn the program
