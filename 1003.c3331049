@@ -2,8 +2,14 @@
 
 int main()
 {
-   int i, x;
+   int i, j, x;
+   int letter;
+   
    char str[26];
+   char*alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   char*key = "keijutvhpsncfamwgdqxzybrolKEIJUTVHPSNCFAMWGDQXZYBROL";
+   
+    
 
    printf("\nPlease enter a string:\t");
    gets(str);//used to scan or read a line of text from a stdin device, and store it in the String variable. 
@@ -24,28 +30,52 @@ int main()
 
       printf("\nEncrypted string: %s\n", str);
       break;
+     
 
    case 2:
       for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] - 3; //the key for encryption is 3 that is subtracted to ASCII value
+        str[i] = str[i] - 3; //the key for decryption is 3 that is subtracted to ASCII value
 
       printf("\nDecrypted string: %s\n", str);
       break;
    case 3:
-      for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] + 13; //the key for encryption is 13 that is added to ASCII value (13 because of the cypher ROT13)
-
-      printf("\nEncrypted string: %s\n", str);
+   printf("\nEncrypted string: ");
+      for(i = 0; i < 26; i++) {
+          char letter = str[i];
+          if(letter == '\n' || letter == '\0') {
+              break; //done here
+          }
+          if((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z')) {
+              for(j = 0; j < 52; j++) {
+                  if(alphabet [j] == letter) {
+                      printf("%c", key[j]);
+                  }
+              }
+          } else{
+              printf("%c", letter);
+          }
+      }
       break;
     case 4:
-      for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] - 13; //the key for encryption is 13 that is subtracted to ASCII value (13 because of the cypher ROT13)
-
-      printf("\nDecrypted string: %s\n", str);
+    printf("\nDecrypted string: ");
+      for(i = 0; i < 26; i++) {
+          char letter = str[i];
+          if(letter == '\n' || letter == '\0') {
+              break; //done here
+          }
+          if((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z')) {
+              for(j = 0; j < 52; j++) {
+                  if(key [j] == letter) {
+                      printf("%c", alphabet[j]);
+                  }
+              }
+          } else {
+              printf("%c", letter);
+          }
+      }
       break;    
-      
       default:
       printf("\nError\n");
    }
    return 0;
-} //This currently works in online gdb not sure about che as I cant get into it
+} //This can only be run in onlineGDB as I couldn't get anything to run in che due to lack of knowledge
